@@ -1,0 +1,28 @@
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: presentation_redis
+
+  backend:
+    build: .
+    container_name: presentation_generator_api
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./generated_presentations:/app/generated_presentations
+    env_file:
+      - .env
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  worker:
+    build: .
+    container_name: presentation_generator_worker
+    depends_on:
+      - redis
+    volumes:
+      - ./generated_presentations:/app/generated_presentations
+    env_file:
+      - .env
+    command: ["arq", "app.worker.WorkerSettings"]

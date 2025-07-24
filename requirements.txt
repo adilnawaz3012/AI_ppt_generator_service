@@ -1,0 +1,11 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+pydantic-settings==2.2.1 # to load and handle .env
+python-pptx==0.6.23
+slowapi==0.1.9 # using it as rate limiter
+redis==4.6.0 # use to cache for fast data retrieval and message broker for ARQ
+fastapi-cache2[redis]==0.2.1 # use to cache recently / commonly topics
+openai==1.35.3
+arq==0.25.0 # to handle background task of calling openapi and generating PPT's
+httpx==0.27.0 # using custom version to match with openai version

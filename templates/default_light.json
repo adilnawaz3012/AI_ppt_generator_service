@@ -1,0 +1,11 @@
+{
+    "name": "Default Light",
+    "description": "A clean and simple light theme.",
+    "colors": {
+        "background": "FFFFFF",
+        "text": "000000",
+        "title": "00529B",
+        "accent": "1E88E5"
+    },
+    "font": "Arial"
+}

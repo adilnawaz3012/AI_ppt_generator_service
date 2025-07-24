@@ -1,0 +1,11 @@
+{
+    "name": "Default Dark",
+    "description": "A modern and sleek dark theme.",
+    "colors": {
+        "background": "212121",
+        "text": "FFFFFF",
+        "title": "64B5F6",
+        "accent": "90CAF9"
+    },
+    "font": "Calibri"
+}
